@@ -19,6 +19,10 @@ import java.util.ArrayList;
 import static android.content.ContentValues.TAG;
 
 /**
+ * This class purely consists of helper methods, which add functionality to the app.
+ *
+ *
+ *
  * Created by monash on 11/15/2016.
  */
 
