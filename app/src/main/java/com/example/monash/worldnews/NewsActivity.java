@@ -14,47 +14,12 @@ public class NewsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_news);
 
         // construct a bunch of fake data for News Articles
-        ArrayList<News> dummyNews = new ArrayList<>();
+        ArrayList<News> newsTest = QueryUtils.extractJsonResponse();
 
-        dummyNews.add(new News("www.google.com",
-                "http://media.guim.co.uk/a2b4a5ff0242d8eab690cc4c09abb980f760c21e/0_0_4081_2448/500.jpg",
-                "01 12 2016", "JK Rowling", "Men In Black Return", "The infamous duo have returned once again" +
-                "to save the earth from ..."));
-        dummyNews.add(new News("www.google.com",
-                "https://media.guim.co.uk/a2b4a5ff0242d8eab690cc4c09abb980f760c21e/0_0_4081_2448/500.jpg",
-                "01 12 2016", "JK Rowling", "Men In Black Return", "The infamous duo have returned once again" +
-                "to save the earth from ..."));
-        dummyNews.add(new News("www.google.com",
-                "https://media.guim.co.uk/a2b4a5ff0242d8eab690cc4c09abb980f760c21e/0_0_4081_2448/500.jpg",
-                "01 12 2016", "JK Rowling", "Men In Black Return", "The infamous duo have returned once again" +
-                "to save the earth from ..."));
-        dummyNews.add(new News("www.google.com",
-                "https://media.guim.co.uk/a2b4a5ff0242d8eab690cc4c09abb980f760c21e/0_0_4081_2448/500.jpg",
-                "01 12 2016", "JK Rowling", "Men In Black Return", "The infamous duo have returned once again" +
-                "to save the earth from ..."));
-        dummyNews.add(new News("www.google.com",
-                "https://media.guim.co.uk/a2b4a5ff0242d8eab690cc4c09abb980f760c21e/0_0_4081_2448/500.jpg",
-                "01 12 2016", "JK Rowling", "Men In Black Return", "The infamous duo have returned once again" +
-                "to save the earth from ..."));
-        dummyNews.add(new News("www.google.com",
-                "https://media.guim.co.uk/a2b4a5ff0242d8eab690cc4c09abb980f760c21e/0_0_4081_2448/500.jpg",
-                "01 12 2016", "JK Rowling", "Men In Black Return", "The infamous duo have returned once again" +
-                "to save the earth from ..."));
-        dummyNews.add(new News("www.google.com",
-                "https://media.guim.co.uk/a2b4a5ff0242d8eab690cc4c09abb980f760c21e/0_0_4081_2448/500.jpg",
-                "01 12 2016", "JK Rowling", "Men In Black Return", "The infamous duo have returned once again" +
-                "to save the earth from ..."));
-        dummyNews.add(new News("www.google.com",
-                "https://media.guim.co.uk/a2b4a5ff0242d8eab690cc4c09abb980f760c21e/0_0_4081_2448/500.jpg",
-                "01 12 2016", "JK Rowling", "Men In Black Return", "The infamous duo have returned once again" +
-                "to save the earth from ..."));
-        dummyNews.add(new News("www.google.com",
-                "https://media.guim.co.uk/a2b4a5ff0242d8eab690cc4c09abb980f760c21e/0_0_4081_2448/500.jpg",
-                "01 12 2016", "JK Rowling", "Men In Black Return", "The infamous duo have returned once again" +
-                "to save the earth from ..."));
+
 
         // create the adapter so I can convert the array of data to views
-        NewsAdapter myAdapter = new NewsAdapter(this, dummyNews);
+        NewsAdapter myAdapter = new NewsAdapter(this, newsTest);
 
         // find a reference to the listview
         ListView listView = (ListView)findViewById(R.id.list);
