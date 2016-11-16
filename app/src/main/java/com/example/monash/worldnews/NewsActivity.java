@@ -14,7 +14,7 @@ public class NewsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_news);
 
         // construct a bunch of fake data for News Articles
-        ArrayList<News> newsTest = QueryUtils.extractJsonResponse();
+        ArrayList<News> newsTest = QueryUtils.fetchNewsArticleData(QueryUtils.GUARDIAN_URL_QUERY);
 
 
 
