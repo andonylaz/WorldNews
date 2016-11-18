@@ -3,4 +3,11 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <!-- Colour of each article title -->
+    <color name="article_title_colour">#333333</color>
+    <!-- Colour of each article description-->
+    <color name="article_description_colour">#bfbfbf</color>
+
+    <!-- Colour of each article author and date text-->
+    <color name="article_author_date_colour">#d9d9d9</color>
 </resources>

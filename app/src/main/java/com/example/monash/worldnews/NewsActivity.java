@@ -12,8 +12,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import static android.view.View.GONE;
 
 public class NewsActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<ArrayList<News>>{
@@ -53,6 +57,15 @@ public class NewsActivity extends AppCompatActivity implements
 
         } else{
             // display there is no connection
+
+            // hide the spinner
+            ProgressBar progressBar = (ProgressBar)findViewById(R.id.progress_spinner);
+            progressBar.setVisibility(GONE);
+
+            // show no connection available with the textview
+            TextView noConnectionText = (TextView)findViewById(R.id.blank_text);
+            noConnectionText.setText(R.string.no_connection_string);
+            noConnectionText.setVisibility(View.VISIBLE);
         }
 
         // set up an onClickListener so when a ListItem is Clicked it takes the user to the
@@ -61,10 +74,10 @@ public class NewsActivity extends AppCompatActivity implements
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                // get the url
+                // get the specific list item reference
                 News clickedArticle = (News) parent.getItemAtPosition(position);
 
-                // retrieve the url from the article
+                // retrieve the url from the clicked reference
                 String urlForArticle = clickedArticle.getArticleUrl();
 
                 // create a new intent, parse the url and start it
@@ -96,6 +109,10 @@ public class NewsActivity extends AppCompatActivity implements
     @Override
     public void onLoadFinished(Loader<ArrayList<News>> loader, ArrayList<News> data) throws
             NullPointerException {
+
+        // hide the progress bar upon completion of network query
+        ProgressBar progressBar = (ProgressBar)findViewById(R.id.progress_spinner);
+        progressBar.setVisibility(GONE);
 
         // clear contents of the adapter before handing it new data
         if (newsAdapter != null) {

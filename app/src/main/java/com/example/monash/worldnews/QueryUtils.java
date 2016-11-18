@@ -220,8 +220,13 @@ public class QueryUtils {
                 JSONArray tagsArray = currentElement.optJSONArray("tags");
                 Log.i(TAG, "retrieved retrieved tags array");
                 // Gets the "webTitle" data which contains the authors name
-                String articleAuthor = tagsArray.optString(2);
-                Log.i(TAG, "retrieved author");
+
+                // get the first object in tags
+                JSONObject insideTagsArrayObject = tagsArray.getJSONObject(0);
+
+                // now get the author from inside that object
+                String articleAuthor = insideTagsArrayObject.optString("webTitle");
+                Log.i(TAG, "retrieved author author is:   " + articleAuthor);
                 // create new News object
                 newsArticles.add(new News(articleUrl, articleImageUrl, articleDate, articleAuthor,
                         articleTitle, articleDescription));
