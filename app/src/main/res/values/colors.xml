@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#263238</color>
     <color name="colorAccent">#FF4081</color>
     <!-- Colour of each article title -->
     <color name="article_title_colour">#333333</color>
     <!-- Colour of each article description-->
-    <color name="article_description_colour">#bfbfbf</color>
+    <color name="article_description_colour">#808080</color>
 
     <!-- Colour of each article author and date text-->
-    <color name="article_author_date_colour">#d9d9d9</color>
+    <color name="article_author_date_colour">#a6a6a6</color>
 </resources>

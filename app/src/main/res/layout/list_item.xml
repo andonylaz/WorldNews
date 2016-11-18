@@ -22,13 +22,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/article_author"
-            android:textColor="@color/article_author_date_colour"/>
+            android:textColor="@color/article_author_date_colour"
+            android:textSize="@dimen/article_author_date_text_size"
+            android:gravity="center" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/article_date"
-            android:textColor="@color/article_author_date_colour"/>
+            android:textColor="@color/article_author_date_colour"
+            android:textSize="@dimen/article_author_date_text_size"
+            android:gravity="center"/>
 
     </LinearLayout>
 
@@ -36,19 +40,24 @@
     android:layout_width="0dp"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_weight="2">
+    android:layout_weight="2"
+    android:paddingTop="8dp"
+    android:paddingLeft="8dp">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/article_title"
-        android:textColor="@color/article_title_colour"/>
+        android:textColor="@color/article_title_colour"
+        android:textSize="@dimen/article_title_text_size"
+        android:paddingBottom="8dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/article_description"
         android:textColor="@color/article_description_colour"
+        android:textSize="@dimen/article_description_text_size"
         android:maxLines="3"
         android:ellipsize="end" />
 </LinearLayout>

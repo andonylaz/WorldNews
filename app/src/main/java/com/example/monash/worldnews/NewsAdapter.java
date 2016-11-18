@@ -38,7 +38,7 @@ public class NewsAdapter extends ArrayAdapter<News> {
 
 
         // Find the reference to the article's ImageView
-        ImageView urlImage = (ImageView)convertView.findViewById(R.id.article_image);
+        ImageView urlImage = (ImageView) convertView.findViewById(R.id.article_image);
         // parse the json image url to convert the url to display an Image
         Picasso.with(getContext())
                 .load(newsArticle.getUrlForImages())
@@ -49,37 +49,38 @@ public class NewsAdapter extends ArrayAdapter<News> {
                 .into(urlImage);
 
         // find the reference to the author and set it
-        TextView author = (TextView)convertView.findViewById(R.id.article_author);
+        TextView author = (TextView) convertView.findViewById(R.id.article_author);
         author.setText(newsArticle.getAuthor());
 
         // find the reference to the date and set it
-        TextView date = (TextView)convertView.findViewById(R.id.article_date);
+        TextView date = (TextView) convertView.findViewById(R.id.article_date);
         // create new SimpleDateFormat with a specified format
         Date dateObject;
         String displayDate = null;
         // input
         DateFormat inputFormatter = new SimpleDateFormat("yyyy-MM-dd");
         try {
-        dateObject = inputFormatter.parse(newsArticle.getDate());
+            dateObject = inputFormatter.parse(newsArticle.getDate());
 
-        // output
+            // output
             DateFormat outputFormatter1 = new SimpleDateFormat("dd-MMM-yyyy");
             displayDate = outputFormatter1.format(dateObject);
 
-        } catch (ParseException e){
+        } catch (ParseException e) {
             e.printStackTrace();
         }
         // finally, set the text in the textview with the proper formatted date
         date.setText(displayDate);
 
         // find the reference to the title and set it
-        TextView title = (TextView)convertView.findViewById(R.id.article_title);
+        TextView title = (TextView) convertView.findViewById(R.id.article_title);
         title.setText(newsArticle.getArticleTitle());
 
         // find the reference to the description and set it
-        TextView description = (TextView)convertView.findViewById(R.id.article_description);
+        TextView description = (TextView) convertView.findViewById(R.id.article_description);
         description.setText(newsArticle.getArticleDescription());
 
         return convertView;
     }
+
 }
